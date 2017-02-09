@@ -1,3 +1,7 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+
+{% block content %}
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -8,7 +12,7 @@
                 <span class="icon-bar"></span>
             </button>
             <!-- Lien vers la page d'accueil -->
-            <a class="navbar-brand" href="#">SciPub</a>
+            <a class="navbar-brand" href="{{ path('app_home')}}">SciPub</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -22,3 +26,4 @@
         </div>
     </div>
 </nav>
+{% endblock %}

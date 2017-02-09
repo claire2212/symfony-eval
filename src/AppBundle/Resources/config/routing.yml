@@ -1,7 +1,27 @@
+app_home:
+    path: /
+    defaults: { _controller: AppBundle:App:home }
+
+app_public_publication:
+    path: /publier
+    defaults: { _controller: AppBundle:App:publication }
+
+app_public_show:
+    path: /public/publication/{id}/show
+    defaults: { _controller: AppBundle:App:show }
+
+app_public_science:
+    path: /science
+    defaults: { _controller: AppBundle:App:showScience }
+
 app_admin:
     resource: "@AppBundle/Resources/config/routing/admin.yml"
     prefix:   /admin
 
-app_home:
-    path: /
-    defaults: { _controller: AppBundle:App:home }
+app_publication:
+        resource: "@AppBundle/Resources/config/routing/publication.yml"
+        prefix:   publication
+
+app_science:
+        resource: "@AppBundle/Resources/config/routing/science.yml"
+        prefix:   /science

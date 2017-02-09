@@ -1,0 +1,40 @@
+AppBundle\Entity\Publication:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\PublicationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: '128'
+        author:
+            type: string
+            length: '64'
+        description:
+            type: string
+            length: 255
+        content:
+            type: text
+        publishedAt:
+            type: datetimetz
+        validated:
+            type: boolean
+    type: entity
+    manyToOne:
+        science:
+            targetEntity: AppBundle\Entity\Science
+            inversedBy: publication
+            joinColum:
+                name: science_id
+                referencedColumnName: id
+    oneToMany:
+        comments:
+            targetEntity: AppBundle\Entity\Comment
+            mappedBy: publication
+
+    lifecycleCallbacks: {  }
